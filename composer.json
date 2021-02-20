@@ -1,5 +1,5 @@
 {
-    "name": "wablab-com/html-template-builder",
+    "name": "wablab-com/html-builder",
     "type": "library",
     "authors": [
         {
@@ -12,7 +12,8 @@
     },
     "autoload": {
         "psr-4": {
-            "WabLab\\HTMLTemplateBuilder\\": "src/",
+            "WabLab\\HtmlBuilder\\": "src/",
+            "WabLab\\Bin\\": "bin/",
             "WabLab\\Tests\\": "tests/"
         }
     },

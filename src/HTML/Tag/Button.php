@@ -1,14 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Button extends AbstractContainerTag
 {
 
-
-protected string $tagName = 'button';
+    protected string $tagName = 'button';
 
     use Trait\AutofocusAttributeTrait;
     use Trait\DisabledAttributeTrait;
@@ -17,7 +16,5 @@ protected string $tagName = 'button';
     use Trait\NameAttributeTrait;
     use Trait\TypeAttributeTrait;
     use Trait\ValueAttributeTrait;
-    
 
 }
-

@@ -2,11 +2,11 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
-use WabLab\HTMLTemplateBuilder\HTML\Renderer\HtmlTagRenderer;
-use WabLab\HTMLTemplateBuilder\HTML\Renderer\RendererMapper;
-use WabLab\HTMLTemplateBuilder\HTML\Tag\Div;
-use WabLab\HTMLTemplateBuilder\HTML\Tag\Span;
-use WabLab\HTMLTemplateBuilder\HTML\Tag\A;
+use WabLab\HtmlBuilder\HTML\Renderer\HtmlTagRenderer;
+use WabLab\HtmlBuilder\HTML\Renderer\RendererMapper;
+use WabLab\HtmlBuilder\HTML\Tag\Div;
+use WabLab\HtmlBuilder\HTML\Tag\Span;
+use WabLab\HtmlBuilder\HTML\Tag\A;
 
 $div = Div::create()->addChild(
         Span::create()->addChild(
@@ -20,11 +20,8 @@ $div = Div::create()->addChild(
     );
 
 
-
-
-
 $rendererMapper = new RendererMapper();
-$rendererMapper->register(\WabLab\HTMLTemplateBuilder\HTML\Tag\AbstractTag::class, HtmlTagRenderer::class);
+$rendererMapper->register(\WabLab\HtmlBuilder\HTML\Tag\AbstractTag::class, HtmlTagRenderer::class);
 
 
 $renderer = new HtmlTagRenderer($rendererMapper, $div);

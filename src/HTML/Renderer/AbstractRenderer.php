@@ -1,8 +1,8 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Renderer;
+namespace WabLab\HtmlBuilder\HTML\Renderer;
 
-use WabLab\HTMLTemplateBuilder\Contract\IRenderer;
+use WabLab\HtmlBuilder\Contract\IRenderer;
 
 abstract class AbstractRenderer implements IRenderer
 {

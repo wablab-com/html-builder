@@ -1,14 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Input extends AbstractContainerTag
 {
 
-
-protected string $tagName = 'input';
+    protected string $tagName = 'input';
 
     use Trait\AcceptAttributeTrait;
     use Trait\AltAttributeTrait;
@@ -38,7 +37,5 @@ protected string $tagName = 'input';
     use Trait\TypeAttributeTrait;
     use Trait\ValueAttributeTrait;
     use Trait\WidthAttributeTrait;
-    
 
 }
-

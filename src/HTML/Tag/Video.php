@@ -1,14 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Video extends AbstractContainerTag
 {
 
-
-protected string $tagName = 'video';
+    protected string $tagName = 'video';
 
     use Trait\AutoplayAttributeTrait;
     use Trait\ControlsAttributeTrait;
@@ -41,7 +40,5 @@ protected string $tagName = 'video';
     use Trait\PreloadAttributeTrait;
     use Trait\SrcAttributeTrait;
     use Trait\WidthAttributeTrait;
-    
 
 }
-

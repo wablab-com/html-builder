@@ -1,6 +1,6 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\Contract;
+namespace WabLab\HtmlBuilder\Contract;
 
 interface IRenderableElement
 {

@@ -1,14 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Embed extends AbstractContainerTag
 {
 
-
-protected string $tagName = 'embed';
+    protected string $tagName = 'embed';
 
     use Trait\HeightAttributeTrait;
     use Trait\OnabortAttributeTrait;
@@ -17,7 +16,5 @@ protected string $tagName = 'embed';
     use Trait\SrcAttributeTrait;
     use Trait\TypeAttributeTrait;
     use Trait\WidthAttributeTrait;
-    
 
 }
-

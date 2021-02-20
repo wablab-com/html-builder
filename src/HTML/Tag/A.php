@@ -1,14 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class A extends AbstractContainerTag
 {
 
-
-protected string $tagName = 'a';
+    protected string $tagName = 'a';
 
     use Trait\DownloadAttributeTrait;
     use Trait\HrefAttributeTrait;
@@ -17,7 +16,5 @@ protected string $tagName = 'a';
     use Trait\RelAttributeTrait;
     use Trait\TargetAttributeTrait;
     use Trait\TypeAttributeTrait;
-    
 
 }
-

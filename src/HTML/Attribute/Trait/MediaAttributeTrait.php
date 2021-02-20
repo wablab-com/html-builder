@@ -1,6 +1,6 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+namespace WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 trait MediaAttributeTrait {
 
@@ -20,4 +20,3 @@ trait MediaAttributeTrait {
         return $this->setAttribute('media', $value);
     }
 }
-

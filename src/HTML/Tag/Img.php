@@ -1,14 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Img extends AbstractContainerTag
 {
 
-
-protected string $tagName = 'img';
+    protected string $tagName = 'img';
 
     use Trait\AltAttributeTrait;
     use Trait\HeightAttributeTrait;
@@ -21,7 +20,5 @@ protected string $tagName = 'img';
     use Trait\SrcsetAttributeTrait;
     use Trait\UsemapAttributeTrait;
     use Trait\WidthAttributeTrait;
-    
 
 }
-

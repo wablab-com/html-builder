@@ -1,12 +1,12 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Renderer;
+namespace WabLab\HtmlBuilder\HTML\Renderer;
 
 use PHPUnit\Util\Exception;
-use WabLab\HTMLTemplateBuilder\Contract\IRenderableElement;
-use WabLab\HTMLTemplateBuilder\Contract\IRenderer;
-use WabLab\HTMLTemplateBuilder\HTML\Tag\AbstractTag;
-use WabLab\HTMLTemplateBuilder\HTML\Tag\AbstractContainerTag;
+use WabLab\HtmlBuilder\Contract\IRenderableElement;
+use WabLab\HtmlBuilder\Contract\IRenderer;
+use WabLab\HtmlBuilder\HTML\Tag\AbstractTag;
+use WabLab\HtmlBuilder\HTML\Tag\AbstractContainerTag;
 
 class HtmlTagRenderer extends AbstractRenderer
 {

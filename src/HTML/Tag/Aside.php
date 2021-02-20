@@ -1,16 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Aside extends AbstractContainerTag
 {
 
+    protected string $tagName = 'aside';
 
-protected string $tagName = 'aside';
-
-    
 
 }
-

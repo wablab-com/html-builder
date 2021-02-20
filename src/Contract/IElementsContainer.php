@@ -1,8 +1,8 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\Contract;
+namespace WabLab\HtmlBuilder\Contract;
 
-use WabLab\HTMLTemplateBuilder\HTML\Element;
+use WabLab\HtmlBuilder\HTML\Element;
 
 interface IElementsContainer
 {

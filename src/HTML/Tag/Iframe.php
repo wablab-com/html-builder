@@ -1,14 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Iframe extends AbstractContainerTag
 {
 
-
-protected string $tagName = 'iframe';
+    protected string $tagName = 'iframe';
 
     use Trait\HeightAttributeTrait;
     use Trait\NameAttributeTrait;
@@ -17,7 +16,5 @@ protected string $tagName = 'iframe';
     use Trait\SrcAttributeTrait;
     use Trait\SrcdocAttributeTrait;
     use Trait\WidthAttributeTrait;
-    
 
 }
-

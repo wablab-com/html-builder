@@ -1,14 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Area extends AbstractContainerTag
 {
 
-
-protected string $tagName = 'area';
+    protected string $tagName = 'area';
 
     use Trait\AltAttributeTrait;
     use Trait\CoordsAttributeTrait;
@@ -19,7 +18,5 @@ protected string $tagName = 'area';
     use Trait\RelAttributeTrait;
     use Trait\ShapeAttributeTrait;
     use Trait\TargetAttributeTrait;
-    
 
 }
-

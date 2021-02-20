@@ -1,14 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Meter extends AbstractContainerTag
 {
 
-
-protected string $tagName = 'meter';
+    protected string $tagName = 'meter';
 
     use Trait\FormAttributeTrait;
     use Trait\HighAttributeTrait;
@@ -17,7 +16,5 @@ protected string $tagName = 'meter';
     use Trait\MinAttributeTrait;
     use Trait\OptimumAttributeTrait;
     use Trait\ValueAttributeTrait;
-    
 
 }
-

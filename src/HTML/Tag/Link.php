@@ -1,14 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Link extends AbstractContainerTag
 {
 
-
-protected string $tagName = 'link';
+    protected string $tagName = 'link';
 
     use Trait\HrefAttributeTrait;
     use Trait\HreflangAttributeTrait;
@@ -17,7 +16,5 @@ protected string $tagName = 'link';
     use Trait\RelAttributeTrait;
     use Trait\SizesAttributeTrait;
     use Trait\TypeAttributeTrait;
-    
 
 }
-

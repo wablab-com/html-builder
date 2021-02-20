@@ -1,16 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Picture extends AbstractContainerTag
 {
 
+    protected string $tagName = 'picture';
 
-protected string $tagName = 'picture';
-
-    
 
 }
-

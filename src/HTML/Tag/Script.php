@@ -1,14 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Script extends AbstractContainerTag
 {
 
-
-protected string $tagName = 'script';
+    protected string $tagName = 'script';
 
     use Trait\AsyncAttributeTrait;
     use Trait\CharsetAttributeTrait;
@@ -17,7 +16,5 @@ protected string $tagName = 'script';
     use Trait\OnloadAttributeTrait;
     use Trait\SrcAttributeTrait;
     use Trait\TypeAttributeTrait;
-    
 
 }
-

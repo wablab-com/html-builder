@@ -1,6 +1,6 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+namespace WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 trait OninvalidAttributeTrait {
 
@@ -20,4 +20,3 @@ trait OninvalidAttributeTrait {
         return $this->setAttribute('oninvalid', $value);
     }
 }
-

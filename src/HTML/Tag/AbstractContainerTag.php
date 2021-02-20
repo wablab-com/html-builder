@@ -1,9 +1,9 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\Contract\IElementsContainer;
-use WabLab\HTMLTemplateBuilder\HTML\Element;
+use WabLab\HtmlBuilder\Contract\IElementsContainer;
+use WabLab\HtmlBuilder\HTML\Element;
 
 abstract class AbstractContainerTag extends AbstractTag implements IElementsContainer
 {

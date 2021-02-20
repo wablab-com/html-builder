@@ -1,8 +1,8 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML;
+namespace WabLab\HtmlBuilder\HTML;
 
-use WabLab\HTMLTemplateBuilder\Contract\IRenderableElement;
+use WabLab\HtmlBuilder\Contract\IRenderableElement;
 
 class XHTMLDocType extends Element implements IRenderableElement
 {

@@ -1,14 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Form extends AbstractContainerTag
 {
 
-
-protected string $tagName = 'form';
+    protected string $tagName = 'form';
 
     use Trait\AcceptCharsetAttributeTrait;
     use Trait\ActionAttributeTrait;
@@ -21,7 +20,5 @@ protected string $tagName = 'form';
     use Trait\OnsubmitAttributeTrait;
     use Trait\RelAttributeTrait;
     use Trait\TargetAttributeTrait;
-    
 
 }
-

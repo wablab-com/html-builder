@@ -1,14 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Audio extends AbstractContainerTag
 {
 
-
-protected string $tagName = 'audio';
+    protected string $tagName = 'audio';
 
     use Trait\AutoplayAttributeTrait;
     use Trait\ControlsAttributeTrait;
@@ -38,7 +37,5 @@ protected string $tagName = 'audio';
     use Trait\OnwaitingAttributeTrait;
     use Trait\PreloadAttributeTrait;
     use Trait\SrcAttributeTrait;
-    
 
 }
-

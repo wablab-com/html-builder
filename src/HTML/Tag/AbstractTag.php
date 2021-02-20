@@ -1,17 +1,17 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\Contract\IRenderableElement;
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait\AllVisibleTagsAttributeTrait;
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait\GlobalAttributeTrait;
-use WabLab\HTMLTemplateBuilder\HTML\Element;
+use WabLab\HtmlBuilder\Contract\IRenderableElement;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait\AllVisibleTagsAttributesTrait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait\GlobalAttributesTrait;
+use WabLab\HtmlBuilder\HTML\Element;
 
 abstract class AbstractTag extends Element implements IRenderableElement
 {
 
-    use GlobalAttributeTrait;
-    use AllVisibleTagsAttributeTrait;
+    use GlobalAttributesTrait;
+    use AllVisibleTagsAttributesTrait;
 
     protected string $tagName = '';
 

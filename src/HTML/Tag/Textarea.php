@@ -1,14 +1,13 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Textarea extends AbstractContainerTag
 {
 
-
-protected string $tagName = 'textarea';
+    protected string $tagName = 'textarea';
 
     use Trait\AutofocusAttributeTrait;
     use Trait\ColsAttributeTrait;
@@ -22,7 +21,5 @@ protected string $tagName = 'textarea';
     use Trait\RequiredAttributeTrait;
     use Trait\RowsAttributeTrait;
     use Trait\WrapAttributeTrait;
-    
 
 }
-

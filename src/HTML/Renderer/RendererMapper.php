@@ -1,8 +1,8 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Renderer;
+namespace WabLab\HtmlBuilder\HTML\Renderer;
 
-use WabLab\HTMLTemplateBuilder\Contract\IRenderableElement;
+use WabLab\HtmlBuilder\Contract\IRenderableElement;
 
 class RendererMapper
 {

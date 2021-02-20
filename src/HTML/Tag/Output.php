@@ -1,19 +1,16 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Tag;
+namespace WabLab\HtmlBuilder\HTML\Tag;
 
-use WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 class Output extends AbstractContainerTag
 {
 
-
-protected string $tagName = 'output';
+    protected string $tagName = 'output';
 
     use Trait\ForAttributeTrait;
     use Trait\FormAttributeTrait;
     use Trait\NameAttributeTrait;
-    
 
 }
-

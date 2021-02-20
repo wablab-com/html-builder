@@ -1,8 +1,8 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML;
+namespace WabLab\HtmlBuilder\HTML;
 
-use WabLab\HTMLTemplateBuilder;
+use WabLab\HtmlBuilder;
 
 class Element
 {

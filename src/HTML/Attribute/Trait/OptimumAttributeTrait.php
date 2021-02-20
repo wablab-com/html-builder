@@ -1,6 +1,6 @@
 <?php
 
-namespace WabLab\HTMLTemplateBuilder\HTML\Attribute\Trait;
+namespace WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
 trait OptimumAttributeTrait {
 
@@ -20,4 +20,3 @@ trait OptimumAttributeTrait {
         return $this->setAttribute('optimum', $value);
     }
 }
-

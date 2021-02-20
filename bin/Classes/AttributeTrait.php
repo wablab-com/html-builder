@@ -4,6 +4,8 @@ namespace WabLab\Bin\Classes;
 
 class AttributeTrait
 {
+    const NAMESPACE = 'WabLab\HtmlBuilder\HTML\Attribute\Trait';
+
     private string $attribute;
     private string $description;
 
@@ -22,16 +24,12 @@ class AttributeTrait
         $this->description = $description;
     }
 
-    public static function getNamespace():string {
-        return 'WabLab\HtmlBuilder\HTML\Attribute\Trait';
-    }
-
     public function getTraitName():string {
         return ucfirst(\createCamelCaseName($this->attribute.'-attribute-trait'));
     }
 
     public function code() {
-        $trait = "namespace {$this->getNamespace()};\n\n";
+        $trait = "namespace ".static::NAMESPACE.";\n\n";
         $trait .= "trait {$this->getTraitName()} {\n\n";
         $trait .= indent(1, AttributeGetterFunction::instance($this->attribute, $this->description)->code())."\n\n";
         $trait .= indent(1, AttributeSetterFunction::instance($this->attribute, $this->description)->code())."\n";

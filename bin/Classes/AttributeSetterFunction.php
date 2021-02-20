@@ -8,12 +8,11 @@ class AttributeSetterFunction
     private string $description;
 
     private static $instances = [];
-    public static function instance(string $attribute, string $description):static {
-        $id = md5($attribute.'-'.$description);
-        if(!isset(static::$instances[$id])) {
-            static::$instances[$id] = new static($attribute, $description);
+    public static function instance(string $attribute, string $description = ''):static {
+        if(!isset(static::$instances[$attribute])) {
+            static::$instances[$attribute] = new static($attribute, $description);
         }
-        return static::$instances[$id];
+        return static::$instances[$attribute];
     }
 
     protected function __construct(string $attribute, string $description)

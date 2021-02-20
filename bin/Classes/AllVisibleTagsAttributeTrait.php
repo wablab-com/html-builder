@@ -50,11 +50,6 @@ class AllVisibleTagsAttributeTrait
 
     protected function __construct() {}
 
-    public function getNamespace(): string
-    {
-        return 'WabLab\HtmlBuilder\HTML\Attribute\Trait';
-    }
-
     public function getTraitName(): string
     {
         return ucfirst(\createCamelCaseName('all-visible-tags-attributes-trait'));
@@ -62,7 +57,7 @@ class AllVisibleTagsAttributeTrait
 
     public function code()
     {
-        $trait = "namespace {$this->getNamespace()};\n\n";
+        $trait = "namespace ".AttributeTrait::NAMESPACE.";\n\n";
         $trait .= "trait {$this->getTraitName()} {\n\n";
         foreach($this->attributesToUse as $attributeName) {
             $trait .= indent(1, 'use '. AttributeTrait::instance($attributeName)->getTraitName()) . ";\n";

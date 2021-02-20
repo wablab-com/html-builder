@@ -4,13 +4,20 @@ namespace WabLab\Bin\Classes;
 
 class TagClass
 {
+    const NAMESPACE='WabLab\HtmlBuilder\HTML\Tag';
+
     private string $tag = '';
     private array $attributes = [];
 
     private static $instances = [];
-    public static function instance(string $tag, array $attributes):static {
+    public static function instance(string $tag, ?array $attributes = null):static {
         if(!isset(static::$instances[$tag])) {
-            static::$instances[$tag] = new static($tag, $attributes);
+            if(!is_null($attributes)) {
+                static::$instances[$tag] = new static($tag, $attributes);
+            } else {
+                throw new \Exception("Tag '{$tag}' class has not been initialized yet, if you want to create a new instance then you have to set the attributes.");
+            }
+
         }
         return static::$instances[$tag];
     }
@@ -21,12 +28,12 @@ class TagClass
         $this->attributes = $attributes;
     }
 
-    public static function getNamespace():string {
-        return 'WabLab\HtmlBuilder\HTML\Tag';
+    public function getAttributes():array {
+        return $this->attributes;
     }
 
     public function getClassName():string {
-        if($this->tag === 'object') {
+        if(in_array($this->tag, ['object', 'var'])) {
             return ucwords(\createCamelCaseName($this->tag.'-tag'));
         }
         return ucwords(\createCamelCaseName($this->tag));
@@ -37,8 +44,8 @@ class TagClass
     }
 
     public function code() {
-        $code = "namespace {$this->getNamespace()};\n\n";
-        $code .= 'use '.AttributeTrait::getNamespace().";\n\n";
+        $code = "namespace ".static::NAMESPACE.";\n\n";
+        $code .= 'use '.AttributeTrait::NAMESPACE.";\n\n";
         $code .= "class {$this->getClassName()} extends AbstractContainerTag\n";
         $code .= "{\n\n";
         $code .= indent(1, $this->getClassPropertiesCode())."\n\n";

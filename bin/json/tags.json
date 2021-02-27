@@ -1,7 +1,8 @@
 [
   {
     "tag": "a",
-    "description": "Defines a hyperlink"
+    "description": "Defines a hyperlink",
+    "allow_short_close": 1
   },
   {
     "tag": "abbr",
@@ -41,7 +42,8 @@
   },
   {
     "tag": "base",
-    "description": "Specifies the base URL\/target for all relative URLs in a document"
+    "description": "Specifies the base URL\/target for all relative URLs in a document",
+    "allow_short_close": 1
   },
   {
     "tag": "basefont",
@@ -69,7 +71,8 @@
   },
   {
     "tag": "br",
-    "description": "Defines a single line break"
+    "description": "Defines a single line break",
+    "allow_short_close": 1
   },
   {
     "tag": "button",
@@ -221,7 +224,8 @@
   },
   {
     "tag": "hr",
-    "description": " Defines a thematic change in the content"
+    "description": " Defines a thematic change in the content",
+    "allow_short_close": 1
   },
   {
     "tag": "html",
@@ -237,11 +241,13 @@
   },
   {
     "tag": "img",
-    "description": "Defines an image"
+    "description": "Defines an image",
+    "allow_short_close": 1
   },
   {
     "tag": "input",
-    "description": "Defines an input control"
+    "description": "Defines an input control",
+    "allow_short_close": 1
   },
   {
     "tag": "ins",
@@ -265,7 +271,8 @@
   },
   {
     "tag": "link",
-    "description": "Defines the relationship between a document and an external resource (most used to link to style sheets)"
+    "description": "Defines the relationship between a document and an external resource (most used to link to style sheets)",
+    "allow_short_close": 1
   },
   {
     "tag": "main",
@@ -281,7 +288,8 @@
   },
   {
     "tag": "meta",
-    "description": "Defines metadata about an HTML document"
+    "description": "Defines metadata about an HTML document",
+    "allow_short_close": 1
   },
   {
     "tag": "meter",

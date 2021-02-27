@@ -8,6 +8,8 @@ class Meta extends AbstractContainerTag
 {
 
     protected string $tagName = 'meta';
+    
+    protected bool $shortCloseAllowed = true;
 
     use Trait\CharsetAttributeTrait;
     use Trait\ContentAttributeTrait;

@@ -8,6 +8,8 @@ class Input extends AbstractContainerTag
 {
 
     protected string $tagName = 'input';
+    
+    protected bool $shortCloseAllowed = true;
 
     use Trait\AcceptAttributeTrait;
     use Trait\AltAttributeTrait;

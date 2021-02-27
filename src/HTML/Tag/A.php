@@ -8,6 +8,8 @@ class A extends AbstractContainerTag
 {
 
     protected string $tagName = 'a';
+    
+    protected bool $shortCloseAllowed = true;
 
     use Trait\DownloadAttributeTrait;
     use Trait\HrefAttributeTrait;

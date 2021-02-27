@@ -8,6 +8,8 @@ class Link extends AbstractContainerTag
 {
 
     protected string $tagName = 'link';
+    
+    protected bool $shortCloseAllowed = true;
 
     use Trait\HrefAttributeTrait;
     use Trait\HreflangAttributeTrait;

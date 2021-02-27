@@ -8,6 +8,8 @@ class Img extends AbstractContainerTag
 {
 
     protected string $tagName = 'img';
+    
+    protected bool $shortCloseAllowed = true;
 
     use Trait\AltAttributeTrait;
     use Trait\HeightAttributeTrait;

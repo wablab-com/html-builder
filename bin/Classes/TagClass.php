@@ -8,25 +8,24 @@ class TagClass
 
     private string $tag = '';
     private array $attributes = [];
+    private bool $shortCloseAllowed = false;
 
     private static $instances = [];
-    public static function instance(string $tag, ?array $attributes = null):static {
+    public static function instance(string $tag, ?array $attributes = null, bool $shortCloseAllowed = false):static {
         if(!isset(static::$instances[$tag])) {
             if(!is_null($attributes)) {
                 static::$instances[$tag] = new static($tag, $attributes);
+                static::$instances[$tag]->tag = $tag;
+                static::$instances[$tag]->attributes = $attributes;
+                static::$instances[$tag]->shortCloseAllowed = $shortCloseAllowed;
             } else {
                 throw new \Exception("Tag '{$tag}' class has not been initialized yet, if you want to create a new instance then you have to set the attributes.");
             }
-
         }
         return static::$instances[$tag];
     }
 
-    protected function __construct(string $tag, array $attributes)
-    {
-        $this->tag = $tag;
-        $this->attributes = $attributes;
-    }
+    protected function __construct() {}
 
     public function getAttributes():array {
         return $this->attributes;
@@ -40,7 +39,11 @@ class TagClass
     }
 
     protected function getClassPropertiesCode():string {
-        return "protected string \$tagName = '{$this->tag}';";
+        $classProperties = "protected string \$tagName = '{$this->tag}';";
+        if($this->shortCloseAllowed) {
+            $classProperties .= "\n\nprotected bool \$shortCloseAllowed = ".($this->shortCloseAllowed ? 'true' : 'false').";";
+        }
+        return $classProperties;
     }
 
     public function code() {

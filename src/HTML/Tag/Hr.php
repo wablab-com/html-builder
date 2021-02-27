@@ -8,6 +8,8 @@ class Hr extends AbstractContainerTag
 {
 
     protected string $tagName = 'hr';
+    
+    protected bool $shortCloseAllowed = true;
 
 
 }

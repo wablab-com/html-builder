@@ -52,9 +52,13 @@ class TagClassAbstractUnitTest
         $code .="{\n\n";
         $code .= indent(1, $this->getClassPropertiesCode())."\n\n";
         $code .= indent(1, $this->getSetupFunction())."\n\n";
-        if(count($tagClassObj->getAttributes())) {
-            $code .= indent(1, SettersGettersTestFunction::instance($this->tag, $tagClassObj->getAttributes())->code())."\n\n";
-        }
+        $attributesToTest = array_merge(
+            $tagClassObj->getAttributes(),
+            GlobalAttributeTrait::instance()->getAttributes(),
+            AllVisibleTagsAttributeTrait::instance()->getAttributes(),
+            NotSupportedInHTML5AttributeTrait::instance()->getAttributes()
+        );
+        $code .= indent(1, SettersGettersTestFunction::instance($this->tag, $attributesToTest)->code())."\n\n";
         $code .="}\n";
         return $code;
     }

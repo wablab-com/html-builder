@@ -8,6 +8,8 @@ class Br extends AbstractContainerTag
 {
 
     protected string $tagName = 'br';
+    
+    protected bool $shortCloseAllowed = true;
 
 
 }

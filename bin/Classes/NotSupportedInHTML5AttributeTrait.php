@@ -2,23 +2,14 @@
 
 namespace WabLab\Bin\Classes;
 
-class GlobalAttributeTrait
+class NotSupportedInHTML5AttributeTrait
 {
 
     protected $attributesToUse = [
-        'accesskey',
-        'class',
-        'contenteditable',
-        'dir',
-        'draggable',
-        'hidden',
-        'id',
-        'lang',
-        'spellcheck',
-        'style',
-        'tabindex',
-        'title',
-        'translate'];
+        'align',
+        'bgcolor',
+        'border',
+        'color'];
 
     private static $instance;
 
@@ -34,7 +25,7 @@ class GlobalAttributeTrait
 
     public function getTraitName(): string
     {
-        return ucfirst(\createCamelCaseName('global-attributes-trait'));
+        return ucfirst(\createCamelCaseName('not-supported-in-html5-attributes-trait'));
     }
 
     public function code()

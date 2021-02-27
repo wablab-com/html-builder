@@ -5,6 +5,7 @@ namespace WabLab\HtmlBuilder\HTML\Tag;
 use WabLab\HtmlBuilder\Contract\IRenderableElement;
 use WabLab\HtmlBuilder\HTML\Attribute\Trait\AllVisibleTagsAttributesTrait;
 use WabLab\HtmlBuilder\HTML\Attribute\Trait\GlobalAttributesTrait;
+use WabLab\HtmlBuilder\HTML\Attribute\Trait\NotSupportedInHtml5AttributesTrait;
 use WabLab\HtmlBuilder\HTML\Element;
 
 abstract class AbstractTag extends Element implements IRenderableElement
@@ -12,6 +13,7 @@ abstract class AbstractTag extends Element implements IRenderableElement
 
     use GlobalAttributesTrait;
     use AllVisibleTagsAttributesTrait;
+    use NotSupportedInHtml5AttributesTrait;
 
     protected string $tagName = '';
 
@@ -73,16 +75,16 @@ abstract class AbstractTag extends Element implements IRenderableElement
     /**
      * @return $this
      */
-    protected function setAttribute(string $name, string $value):static {
+    public function setAttribute(string $name, string $value):static {
         $this->attributes[$name] = $value;
         return $this;
     }
 
-    protected function getAttribute(string $name) {
+    public function getAttribute(string $name) {
         return $this->attributes[$name] ?? '';
     }
 
-    protected function removeAttribute(string $name):void {
+    public function removeAttribute(string $name):void {
         unset($this->attributes[$name]);
     }
 

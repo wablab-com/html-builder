@@ -70,4 +70,8 @@ class AllVisibleTagsAttributeTrait
     {
         file_put_contents(BINDIR . "/../src/HTML/Attribute/Trait/{$this->getTraitName()}.php", "<?php\n\n{$this->code()}");
     }
+
+    public function getAttributes():array{
+        return $this->attributesToUse;
+    }
 }

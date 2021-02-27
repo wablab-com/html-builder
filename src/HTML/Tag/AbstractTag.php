@@ -19,10 +19,6 @@ abstract class AbstractTag extends Element implements IRenderableElement
 
     protected bool $shortCloseAllowed = false;
 
-    private static string $uniqueIdPrefix = '';
-
-    private string $hash = '';
-
     protected string $innerText = '';
 
     private array $attributes = [];
@@ -33,18 +29,6 @@ abstract class AbstractTag extends Element implements IRenderableElement
             throw new \Exception("\$tagName variable must be overridden.");
         }
     }
-
-    public function hash() : string {
-        if(!$this->hash) {
-            if(!static::$uniqueIdPrefix) {
-                // this will be generated only once for each process
-                static::$uniqueIdPrefix = sha1(gethostname().'-'.microtime().'-'.mt_rand(1000000000000000, 9999999999999999).'-'.getmypid().'-'.uniqid('', true)).'-';
-            }
-            $this->hash = uniqid(static::$uniqueIdPrefix, false);
-        }
-        return $this->hash;
-    }
-
 
     public function getInnerText(): string
     {

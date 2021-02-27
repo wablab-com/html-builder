@@ -12,13 +12,6 @@ class RendererMapper
         $this->map[$type] = $rendererClass;
     }
 
-    public function map(string $type) {
-        if(isset($this->map[$type])) {
-            return $this->map[$type];
-        }
-        null;
-    }
-
     public function mapRenderableElement(IRenderableElement $element) {
         foreach($this->map as $type => $rendererClass) {
             if(is_subclass_of($element, $type)) {

@@ -2,19 +2,15 @@
 
 namespace WabLab\HtmlBuilder\HTML;
 
+use WabLab\HtmlBuilder\Contract\IHtmlDocType;
 use WabLab\HtmlBuilder\Contract\IRenderableElement;
 
-class HTML5DocType extends Element implements IRenderableElement
+class HTML5DocType extends Element implements IRenderableElement, IHtmlDocType
 {
-
-    public function render() : string
-    {
-        return '<!DOCTYPE html>';
-    }
 
     public function __toString() : string
     {
-        return $this->render();
+        return '<!DOCTYPE html>';
     }
 
 }

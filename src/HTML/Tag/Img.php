@@ -4,7 +4,7 @@ namespace WabLab\HtmlBuilder\HTML\Tag;
 
 use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
-class Img extends AbstractContainerTag
+class Img extends AbstractTag
 {
 
     protected string $tagName = 'img';

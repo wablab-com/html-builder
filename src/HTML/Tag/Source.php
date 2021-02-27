@@ -4,10 +4,12 @@ namespace WabLab\HtmlBuilder\HTML\Tag;
 
 use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
-class Source extends AbstractContainerTag
+class Source extends AbstractTag
 {
 
     protected string $tagName = 'source';
+    
+    protected bool $shortCloseAllowed = true;
 
     use Trait\MediaAttributeTrait;
     use Trait\SizesAttributeTrait;

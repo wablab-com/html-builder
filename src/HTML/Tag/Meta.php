@@ -4,7 +4,7 @@ namespace WabLab\HtmlBuilder\HTML\Tag;
 
 use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
-class Meta extends AbstractContainerTag
+class Meta extends AbstractTag
 {
 
     protected string $tagName = 'meta';

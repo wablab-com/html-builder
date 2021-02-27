@@ -19,7 +19,7 @@ class Comment extends Element implements IRenderableElement
      * @param string $innerText
      * @return AbstractComponent
      */
-    public function setInnerText(string $innerText): AbstractComponent
+    public function setInnerText(string $innerText): static
     {
         $this->innerText = $innerText;
         return $this;

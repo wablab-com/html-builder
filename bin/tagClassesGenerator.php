@@ -32,7 +32,7 @@ NotSupportedInHTML5AttributeTrait::instance()->generate();
 $allAttributesByGroup = getAllAttributesByGroup();
 $allTags = getAllTags();
 foreach($allTags as $tag) {
-    TagClass::instance($tag['tag'], $allAttributesByGroup[$tag['tag']] ?? [], $tag['allow_short_close'] ? true : false )->generate();
+    TagClass::instance($tag['tag'], $allAttributesByGroup[$tag['tag']] ?? [], $tag['allow_short_close'] ? true : false, $tag['is_empty_element'] ? true : false )->generate();
     TagClassAbstractUnitTest::instance($tag['tag'])->generate();
     TagClassUnitTest::instance($tag['tag'])->generate();
 }

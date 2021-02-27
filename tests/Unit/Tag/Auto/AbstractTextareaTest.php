@@ -3,18 +3,24 @@
 namespace WabLab\Tests\Unit\Tag\Auto;
 
 use WabLab\Tests\AbstractTestCase;
+use WabLab\HtmlBuilder\HTML\Renderer\RendererMapper;
+use WabLab\HtmlBuilder\HTML\Tag\AbstractTag;
+use WabLab\HtmlBuilder\HTML\Renderer\HtmlTagRenderer;
 use WabLab\HtmlBuilder\HTML\Tag\Textarea;
 
 abstract class AbstractTextareaTest extends AbstractTestCase
 {
 
     protected Textarea $tagObj;
+    protected RendererMapper $rendererMapper;
+    
 
     function setUp(): void
     {
         parent::setUp();
         $this->tagObj = Textarea::create();
-    
+        $this->rendererMapper = new RendererMapper();
+        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 
@@ -138,6 +144,133 @@ abstract class AbstractTextareaTest extends AbstractTestCase
         $this->assertEquals('bgcolor', $this->tagObj->getBgcolor('bgcolor'));
         $this->assertEquals('border', $this->tagObj->getBorder('border'));
         $this->assertEquals('color', $this->tagObj->getColor('color'));
+    
+    }
+
+    public function testTagBasicRenderer() {
+        $this->tagObj->setAutofocus('autofocus');
+        $this->tagObj->setCols('cols');
+        $this->tagObj->setDirname('dirname');
+        $this->tagObj->setDisabled('disabled');
+        $this->tagObj->setForm('form');
+        $this->tagObj->setMaxlength('maxlength');
+        $this->tagObj->setName('name');
+        $this->tagObj->setPlaceholder('placeholder');
+        $this->tagObj->setReadonly('readonly');
+        $this->tagObj->setRequired('required');
+        $this->tagObj->setRows('rows');
+        $this->tagObj->setWrap('wrap');
+        $this->tagObj->setAccesskey('accesskey');
+        $this->tagObj->setClass('class');
+        $this->tagObj->setContenteditable('contenteditable');
+        $this->tagObj->setDir('dir');
+        $this->tagObj->setDraggable('draggable');
+        $this->tagObj->setHidden('hidden');
+        $this->tagObj->setId('id');
+        $this->tagObj->setLang('lang');
+        $this->tagObj->setSpellcheck('spellcheck');
+        $this->tagObj->setStyle('style');
+        $this->tagObj->setTabindex('tabindex');
+        $this->tagObj->setTitle('title');
+        $this->tagObj->setTranslate('translate');
+        $this->tagObj->setOnblur('onblur');
+        $this->tagObj->setOnchange('onchange');
+        $this->tagObj->setOnclick('onclick');
+        $this->tagObj->setOncontextmenu('oncontextmenu');
+        $this->tagObj->setOncopy('oncopy');
+        $this->tagObj->setOncut('oncut');
+        $this->tagObj->setOndblclick('ondblclick');
+        $this->tagObj->setOndrag('ondrag');
+        $this->tagObj->setOndragend('ondragend');
+        $this->tagObj->setOndragenter('ondragenter');
+        $this->tagObj->setOndragleave('ondragleave');
+        $this->tagObj->setOndragover('ondragover');
+        $this->tagObj->setOndragstart('ondragstart');
+        $this->tagObj->setOndrop('ondrop');
+        $this->tagObj->setOnfocus('onfocus');
+        $this->tagObj->setOninput('oninput');
+        $this->tagObj->setOninvalid('oninvalid');
+        $this->tagObj->setOnkeydown('onkeydown');
+        $this->tagObj->setOnkeypress('onkeypress');
+        $this->tagObj->setOnkeyup('onkeyup');
+        $this->tagObj->setOnmousedown('onmousedown');
+        $this->tagObj->setOnmousemove('onmousemove');
+        $this->tagObj->setOnmouseout('onmouseout');
+        $this->tagObj->setOnmouseover('onmouseover');
+        $this->tagObj->setOnmouseup('onmouseup');
+        $this->tagObj->setOnmousewheel('onmousewheel');
+        $this->tagObj->setOnpaste('onpaste');
+        $this->tagObj->setOnscroll('onscroll');
+        $this->tagObj->setOnselect('onselect');
+        $this->tagObj->setOnwheel('onwheel');
+        $this->tagObj->setAlign('align');
+        $this->tagObj->setBgcolor('bgcolor');
+        $this->tagObj->setBorder('border');
+        $this->tagObj->setColor('color');
+    
+        $renderer = new HtmlTagRenderer($this->rendererMapper, $this->tagObj);
+        $renderedTag = $renderer->render();
+    
+        $this->assertStringContainsString('<textarea', $renderedTag);
+        $this->assertStringContainsString('autofocus', $renderedTag);
+        $this->assertStringContainsString('cols', $renderedTag);
+        $this->assertStringContainsString('dirname', $renderedTag);
+        $this->assertStringContainsString('disabled', $renderedTag);
+        $this->assertStringContainsString('form', $renderedTag);
+        $this->assertStringContainsString('maxlength', $renderedTag);
+        $this->assertStringContainsString('name', $renderedTag);
+        $this->assertStringContainsString('placeholder', $renderedTag);
+        $this->assertStringContainsString('readonly', $renderedTag);
+        $this->assertStringContainsString('required', $renderedTag);
+        $this->assertStringContainsString('rows', $renderedTag);
+        $this->assertStringContainsString('wrap', $renderedTag);
+        $this->assertStringContainsString('accesskey', $renderedTag);
+        $this->assertStringContainsString('class', $renderedTag);
+        $this->assertStringContainsString('contenteditable', $renderedTag);
+        $this->assertStringContainsString('dir', $renderedTag);
+        $this->assertStringContainsString('draggable', $renderedTag);
+        $this->assertStringContainsString('hidden', $renderedTag);
+        $this->assertStringContainsString('id', $renderedTag);
+        $this->assertStringContainsString('lang', $renderedTag);
+        $this->assertStringContainsString('spellcheck', $renderedTag);
+        $this->assertStringContainsString('style', $renderedTag);
+        $this->assertStringContainsString('tabindex', $renderedTag);
+        $this->assertStringContainsString('title', $renderedTag);
+        $this->assertStringContainsString('translate', $renderedTag);
+        $this->assertStringContainsString('onblur', $renderedTag);
+        $this->assertStringContainsString('onchange', $renderedTag);
+        $this->assertStringContainsString('onclick', $renderedTag);
+        $this->assertStringContainsString('oncontextmenu', $renderedTag);
+        $this->assertStringContainsString('oncopy', $renderedTag);
+        $this->assertStringContainsString('oncut', $renderedTag);
+        $this->assertStringContainsString('ondblclick', $renderedTag);
+        $this->assertStringContainsString('ondrag', $renderedTag);
+        $this->assertStringContainsString('ondragend', $renderedTag);
+        $this->assertStringContainsString('ondragenter', $renderedTag);
+        $this->assertStringContainsString('ondragleave', $renderedTag);
+        $this->assertStringContainsString('ondragover', $renderedTag);
+        $this->assertStringContainsString('ondragstart', $renderedTag);
+        $this->assertStringContainsString('ondrop', $renderedTag);
+        $this->assertStringContainsString('onfocus', $renderedTag);
+        $this->assertStringContainsString('oninput', $renderedTag);
+        $this->assertStringContainsString('oninvalid', $renderedTag);
+        $this->assertStringContainsString('onkeydown', $renderedTag);
+        $this->assertStringContainsString('onkeypress', $renderedTag);
+        $this->assertStringContainsString('onkeyup', $renderedTag);
+        $this->assertStringContainsString('onmousedown', $renderedTag);
+        $this->assertStringContainsString('onmousemove', $renderedTag);
+        $this->assertStringContainsString('onmouseout', $renderedTag);
+        $this->assertStringContainsString('onmouseover', $renderedTag);
+        $this->assertStringContainsString('onmouseup', $renderedTag);
+        $this->assertStringContainsString('onmousewheel', $renderedTag);
+        $this->assertStringContainsString('onpaste', $renderedTag);
+        $this->assertStringContainsString('onscroll', $renderedTag);
+        $this->assertStringContainsString('onselect', $renderedTag);
+        $this->assertStringContainsString('onwheel', $renderedTag);
+        $this->assertStringContainsString('align', $renderedTag);
+        $this->assertStringContainsString('bgcolor', $renderedTag);
+        $this->assertStringContainsString('border', $renderedTag);
+        $this->assertStringContainsString('color', $renderedTag);
     
     }
 

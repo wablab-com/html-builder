@@ -4,7 +4,7 @@ namespace WabLab\HtmlBuilder\HTML\Tag;
 
 use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
-class Link extends AbstractContainerTag
+class Link extends AbstractTag
 {
 
     protected string $tagName = 'link';

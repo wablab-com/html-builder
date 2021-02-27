@@ -4,10 +4,12 @@ namespace WabLab\HtmlBuilder\HTML\Tag;
 
 use WabLab\HtmlBuilder\HTML\Attribute\Trait;
 
-class Area extends AbstractContainerTag
+class Area extends AbstractTag
 {
 
     protected string $tagName = 'area';
+    
+    protected bool $shortCloseAllowed = true;
 
     use Trait\AltAttributeTrait;
     use Trait\CoordsAttributeTrait;

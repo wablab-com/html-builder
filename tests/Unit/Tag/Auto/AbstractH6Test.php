@@ -20,7 +20,6 @@ abstract class AbstractH6Test extends AbstractTestCase
         parent::setUp();
         $this->tagObj = H6::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

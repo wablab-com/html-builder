@@ -20,7 +20,6 @@ abstract class AbstractUlTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Ul::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

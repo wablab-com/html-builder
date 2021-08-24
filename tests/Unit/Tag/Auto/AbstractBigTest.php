@@ -20,7 +20,6 @@ abstract class AbstractBigTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Big::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

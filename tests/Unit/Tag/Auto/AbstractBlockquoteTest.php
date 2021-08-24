@@ -20,7 +20,6 @@ abstract class AbstractBlockquoteTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Blockquote::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

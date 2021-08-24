@@ -20,7 +20,6 @@ abstract class AbstractAreaTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Area::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

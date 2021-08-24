@@ -20,7 +20,6 @@ abstract class AbstractFontTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Font::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

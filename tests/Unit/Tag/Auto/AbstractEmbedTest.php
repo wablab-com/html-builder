@@ -20,7 +20,6 @@ abstract class AbstractEmbedTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Embed::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

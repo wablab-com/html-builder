@@ -20,7 +20,6 @@ abstract class AbstractDirTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Dir::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

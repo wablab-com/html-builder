@@ -20,7 +20,6 @@ abstract class AbstractProgressTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Progress::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

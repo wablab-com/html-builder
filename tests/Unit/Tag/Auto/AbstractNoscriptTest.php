@@ -20,7 +20,6 @@ abstract class AbstractNoscriptTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Noscript::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

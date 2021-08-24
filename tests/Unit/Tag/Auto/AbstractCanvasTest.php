@@ -20,7 +20,6 @@ abstract class AbstractCanvasTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Canvas::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

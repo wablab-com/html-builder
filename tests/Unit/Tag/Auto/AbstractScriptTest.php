@@ -20,7 +20,6 @@ abstract class AbstractScriptTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Script::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

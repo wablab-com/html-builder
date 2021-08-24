@@ -20,7 +20,6 @@ abstract class AbstractLegendTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Legend::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

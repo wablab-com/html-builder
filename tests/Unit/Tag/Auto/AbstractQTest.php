@@ -20,7 +20,6 @@ abstract class AbstractQTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Q::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

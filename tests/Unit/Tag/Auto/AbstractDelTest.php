@@ -20,7 +20,6 @@ abstract class AbstractDelTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Del::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

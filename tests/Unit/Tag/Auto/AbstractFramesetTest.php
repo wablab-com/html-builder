@@ -20,7 +20,6 @@ abstract class AbstractFramesetTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Frameset::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

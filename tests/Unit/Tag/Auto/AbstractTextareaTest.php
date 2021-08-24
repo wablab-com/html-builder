@@ -20,7 +20,6 @@ abstract class AbstractTextareaTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Textarea::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

@@ -4,7 +4,9 @@ namespace WabLab\Tests\Unit;
 
 use WabLab\HtmlBuilder\HTML\Comment;
 use WabLab\HtmlBuilder\HTML\Renderer\CommentRenderer;
+use WabLab\HtmlBuilder\HTML\Renderer\HtmlTagRenderer;
 use WabLab\HtmlBuilder\HTML\Renderer\RendererMapper;
+use WabLab\HtmlBuilder\HTML\Tag\Div;
 use WabLab\Tests\AbstractTestCase;
 
 class HtmlCommentTest extends AbstractTestCase
@@ -16,7 +18,6 @@ class HtmlCommentTest extends AbstractTestCase
     {
         parent::setUp();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(Comment::class, CommentRenderer::class);
     }
 
     public function testCommentGettersAndSetters() {
@@ -31,6 +32,15 @@ class HtmlCommentTest extends AbstractTestCase
         $renderedComment = $commentRenderer->render();
         $this->assertStringContainsString($comment->getInnerText(), $renderedComment);
         $this->assertStringNotContainsString("\n", $renderedComment);
+    }
+
+    public function testNestedCommentRenderer()
+    {
+        $div = Div::create()->addChild(
+            Comment::create()->setInnerText('testComment')
+        );
+        $divRenderer = new HtmlTagRenderer($this->rendererMapper, $div);
+        $this->assertStringContainsString('testComment', $divRenderer->render());
     }
 
 

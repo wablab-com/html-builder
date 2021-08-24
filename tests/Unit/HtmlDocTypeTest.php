@@ -19,7 +19,6 @@ class HtmlDocTypeTest extends AbstractTestCase
     {
         parent::setUp();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(IHtmlDocType::class, HtmlDocTypeRenderer::class);
     }
 
     public function testHtml5DockTypeRenderer()

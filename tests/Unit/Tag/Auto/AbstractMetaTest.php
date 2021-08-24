@@ -20,7 +20,6 @@ abstract class AbstractMetaTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Meta::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

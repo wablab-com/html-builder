@@ -20,7 +20,6 @@ abstract class AbstractCiteTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Cite::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

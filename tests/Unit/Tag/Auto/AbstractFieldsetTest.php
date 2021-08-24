@@ -20,7 +20,6 @@ abstract class AbstractFieldsetTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Fieldset::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

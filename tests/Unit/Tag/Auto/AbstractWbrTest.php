@@ -20,7 +20,6 @@ abstract class AbstractWbrTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Wbr::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

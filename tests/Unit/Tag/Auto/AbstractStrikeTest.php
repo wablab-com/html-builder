@@ -20,7 +20,6 @@ abstract class AbstractStrikeTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Strike::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

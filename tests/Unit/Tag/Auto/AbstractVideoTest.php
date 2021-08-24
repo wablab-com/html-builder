@@ -20,7 +20,6 @@ abstract class AbstractVideoTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Video::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

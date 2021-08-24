@@ -20,7 +20,6 @@ class CommonRendererTest extends AbstractTestCase
     {
         parent::setUp();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
 
     public function testNestedTagRendering() {
@@ -34,6 +33,7 @@ class CommonRendererTest extends AbstractTestCase
     public function testUnregisteredNestedMapper() {
         $div = $this->getNestedHtmlTag();
         $div->addChild(Comment::create()->setInnerText('test comment'));
+        $this->rendererMapper->unRegister(Comment::class);
         try {
             $renderer = new HtmlTagRenderer($this->rendererMapper, $div);
             $renderer->render();

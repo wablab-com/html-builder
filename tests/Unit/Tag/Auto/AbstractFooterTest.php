@@ -20,7 +20,6 @@ abstract class AbstractFooterTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Footer::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

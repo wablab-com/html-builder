@@ -20,7 +20,6 @@ abstract class AbstractNavTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Nav::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

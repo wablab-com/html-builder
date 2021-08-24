@@ -43,7 +43,7 @@ class TagClassAbstractUnitTest
         $code .= indent(1, "parent::setUp();")."\n";
         $code .= indent(1, "\$this->tagObj = {$tagClassObj->getClassName()}::create();")."\n";
         $code .= indent(1, "\$this->rendererMapper = new RendererMapper();")."\n";
-        $code .= indent(1, "\$this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);")."\n";
+        //$code .= indent(1, "\$this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);")."\n";
         $code .= "}\n";
         return $code;
     }

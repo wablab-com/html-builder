@@ -20,7 +20,6 @@ abstract class AbstractAudioTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Audio::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

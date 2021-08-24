@@ -20,7 +20,6 @@ abstract class AbstractH3Test extends AbstractTestCase
         parent::setUp();
         $this->tagObj = H3::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

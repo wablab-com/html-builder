@@ -20,7 +20,6 @@ abstract class AbstractIframeTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Iframe::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

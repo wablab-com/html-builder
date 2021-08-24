@@ -20,7 +20,6 @@ abstract class AbstractVarTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = VarTag::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

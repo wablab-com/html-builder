@@ -20,7 +20,6 @@ abstract class AbstractTtTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Tt::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

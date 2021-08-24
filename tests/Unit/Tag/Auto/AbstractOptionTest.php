@@ -20,7 +20,6 @@ abstract class AbstractOptionTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Option::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

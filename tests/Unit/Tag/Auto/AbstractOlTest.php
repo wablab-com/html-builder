@@ -20,7 +20,6 @@ abstract class AbstractOlTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Ol::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

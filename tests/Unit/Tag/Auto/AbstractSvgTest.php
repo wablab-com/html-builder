@@ -20,7 +20,6 @@ abstract class AbstractSvgTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Svg::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

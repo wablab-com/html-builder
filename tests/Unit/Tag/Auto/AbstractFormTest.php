@@ -20,7 +20,6 @@ abstract class AbstractFormTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Form::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

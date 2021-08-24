@@ -20,7 +20,6 @@ abstract class AbstractTimeTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Time::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

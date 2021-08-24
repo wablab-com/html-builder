@@ -20,7 +20,6 @@ abstract class AbstractSectionTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Section::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

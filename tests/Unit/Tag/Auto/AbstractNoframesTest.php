@@ -20,7 +20,6 @@ abstract class AbstractNoframesTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Noframes::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

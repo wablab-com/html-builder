@@ -20,7 +20,6 @@ abstract class AbstractButtonTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Button::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

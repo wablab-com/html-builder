@@ -20,7 +20,6 @@ abstract class AbstractStrongTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Strong::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

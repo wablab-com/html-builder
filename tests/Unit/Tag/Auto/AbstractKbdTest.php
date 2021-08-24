@@ -20,7 +20,6 @@ abstract class AbstractKbdTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Kbd::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

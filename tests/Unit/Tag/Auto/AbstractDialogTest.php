@@ -20,7 +20,6 @@ abstract class AbstractDialogTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Dialog::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

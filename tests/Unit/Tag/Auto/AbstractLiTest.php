@@ -20,7 +20,6 @@ abstract class AbstractLiTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Li::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

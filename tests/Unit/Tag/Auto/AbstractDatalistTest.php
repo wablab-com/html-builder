@@ -20,7 +20,6 @@ abstract class AbstractDatalistTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Datalist::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

@@ -20,7 +20,6 @@ abstract class AbstractFigcaptionTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Figcaption::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

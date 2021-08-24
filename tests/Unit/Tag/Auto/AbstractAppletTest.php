@@ -20,7 +20,6 @@ abstract class AbstractAppletTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Applet::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

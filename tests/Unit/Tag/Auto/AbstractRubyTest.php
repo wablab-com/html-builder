@@ -20,7 +20,6 @@ abstract class AbstractRubyTest extends AbstractTestCase
         parent::setUp();
         $this->tagObj = Ruby::create();
         $this->rendererMapper = new RendererMapper();
-        $this->rendererMapper->register(AbstractTag::class, HtmlTagRenderer::class);
     }
     
 

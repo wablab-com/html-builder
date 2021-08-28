@@ -4,9 +4,7 @@ namespace WabLab\Tests\Unit;
 
 use WabLab\HtmlBuilder\HTML\Comment;
 use WabLab\HtmlBuilder\HTML\Renderer\HtmlTagRenderer;
-use WabLab\HtmlBuilder\HTML\Renderer\RendererMapper;
 use WabLab\HtmlBuilder\HTML\Tag\A;
-use WabLab\HtmlBuilder\HTML\Tag\AbstractTag;
 use WabLab\HtmlBuilder\HTML\Tag\Div;
 use WabLab\HtmlBuilder\HTML\Tag\Span;
 use WabLab\Tests\AbstractTestCase;
@@ -14,12 +12,9 @@ use WabLab\Tests\AbstractTestCase;
 class CommonRendererTest extends AbstractTestCase
 {
 
-    private RendererMapper $rendererMapper;
-
     public function setUp(): void
     {
         parent::setUp();
-        $this->rendererMapper = new RendererMapper();
     }
 
     public function testNestedTagRendering() {

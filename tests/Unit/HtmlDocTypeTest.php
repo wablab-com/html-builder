@@ -13,12 +13,9 @@ use WabLab\Tests\AbstractTestCase;
 class HtmlDocTypeTest extends AbstractTestCase
 {
 
-    private RendererMapper $rendererMapper;
-
     public function setUp(): void
     {
         parent::setUp();
-        $this->rendererMapper = new RendererMapper();
     }
 
     public function testHtml5DockTypeRenderer()

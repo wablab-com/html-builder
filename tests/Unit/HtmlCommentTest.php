@@ -12,12 +12,9 @@ use WabLab\Tests\AbstractTestCase;
 class HtmlCommentTest extends AbstractTestCase
 {
 
-    private RendererMapper $rendererMapper;
-
     public function setUp(): void
     {
         parent::setUp();
-        $this->rendererMapper = new RendererMapper();
     }
 
     public function testCommentGettersAndSetters() {

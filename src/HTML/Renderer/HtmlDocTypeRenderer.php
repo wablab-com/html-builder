@@ -3,6 +3,7 @@
 namespace WabLab\HtmlBuilder\HTML\Renderer;
 
 use WabLab\HtmlBuilder\Contract\IHtmlDocType;
+use WabLab\HtmlBuilder\Contract\IRenderingContext;
 
 class HtmlDocTypeRenderer extends AbstractRenderer
 {
@@ -22,7 +23,7 @@ class HtmlDocTypeRenderer extends AbstractRenderer
     //
     // LEVEL 0
     //
-    public function render(): string
+    public function render(?IRenderingContext $context = null):string
     {
         return "{$this->docType}";
     }

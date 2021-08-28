@@ -3,6 +3,7 @@
 namespace WabLab\HtmlBuilder\HTML\Renderer;
 
 
+use WabLab\HtmlBuilder\Contract\IRenderingContext;
 use WabLab\HtmlBuilder\HTML\Comment;
 
 class CommentRenderer extends AbstractRenderer
@@ -22,7 +23,7 @@ class CommentRenderer extends AbstractRenderer
     //
     // LEVEL 0
     //
-    public function render(): string
+    public function render(?IRenderingContext $context = null):string
     {
         if (strrpos($this->comment->getInnerText(), "\n")) {
             return $this->renderMultiLineComment();

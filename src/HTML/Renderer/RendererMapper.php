@@ -5,6 +5,7 @@ namespace WabLab\HtmlBuilder\HTML\Renderer;
 use WabLab\HtmlBuilder\Contract\IHtmlDocType;
 use WabLab\HtmlBuilder\Contract\IRenderableElement;
 use WabLab\HtmlBuilder\HTML\Comment;
+use WabLab\HtmlBuilder\HTML\FreeText;
 use WabLab\HtmlBuilder\HTML\Tag\AbstractTag;
 
 class RendererMapper
@@ -17,6 +18,7 @@ class RendererMapper
         $this->register(AbstractTag::class, HtmlTagRenderer::class);
         $this->register(Comment::class, CommentRenderer::class);
         $this->register(IHtmlDocType::class, HtmlDocTypeRenderer::class);
+        $this->register(FreeText::class, FreeTextRenderer::class);
     }
 
     public function register(string $type, $rendererClass) {

@@ -4,5 +4,5 @@ namespace WabLab\HtmlBuilder\Contract;
 
 interface IRenderer
 {
-    public function render():string;
+    public function render(?IRenderingContext $context = null):string;
 }

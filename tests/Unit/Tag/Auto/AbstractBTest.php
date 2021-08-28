@@ -3,7 +3,6 @@
 namespace WabLab\Tests\Unit\Tag\Auto;
 
 use WabLab\Tests\AbstractTestCase;
-use WabLab\HtmlBuilder\HTML\Renderer\RendererMapper;
 use WabLab\HtmlBuilder\HTML\Tag\AbstractTag;
 use WabLab\HtmlBuilder\HTML\Renderer\HtmlTagRenderer;
 use WabLab\HtmlBuilder\HTML\Tag\B;
@@ -12,14 +11,12 @@ abstract class AbstractBTest extends AbstractTestCase
 {
 
     protected B $tagObj;
-    protected RendererMapper $rendererMapper;
     
 
     function setUp(): void
     {
         parent::setUp();
         $this->tagObj = B::create();
-        $this->rendererMapper = new RendererMapper();
     }
     
 

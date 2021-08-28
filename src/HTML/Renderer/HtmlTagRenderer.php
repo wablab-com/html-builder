@@ -5,6 +5,8 @@ namespace WabLab\HtmlBuilder\HTML\Renderer;
 use PHPUnit\Util\Exception;
 use WabLab\HtmlBuilder\Contract\IRenderableElement;
 use WabLab\HtmlBuilder\Contract\IRenderer;
+use WabLab\HtmlBuilder\Contract\IRenderingContext;
+use WabLab\HtmlBuilder\Helper\RenderingHelper;
 use WabLab\HtmlBuilder\HTML\Tag\AbstractTag;
 use WabLab\HtmlBuilder\HTML\Tag\AbstractContainerTag;
 
@@ -28,10 +30,10 @@ class HtmlTagRenderer extends AbstractRenderer
     //
     // LEVEL 0
     //
-    public function render(): string
+    public function render(?IRenderingContext $context = null):string
     {
         return $this->renderHtmlOpenTag() .
-            $this->renderFormattedInnerText() .
+            $this->renderFormattedInnerText($context) .
             $this->renderHtmlCloseTag();
     }
 
@@ -43,9 +45,9 @@ class HtmlTagRenderer extends AbstractRenderer
         return $this->indent($this->indentation, "<{$this->htmlComponent->getTagName()}{$this->renderAttributes()}");
     }
 
-    protected function renderFormattedInnerText()
+    protected function renderFormattedInnerText(?IRenderingContext $context = null)
     {
-        $formattedInnerText = $this->renderInnerText();
+        $formattedInnerText = $this->renderInnerText($context);
         if ($formattedInnerText) {
             $this->invalidInnerText = false;
             return ">\n" . $formattedInnerText;
@@ -78,43 +80,23 @@ class HtmlTagRenderer extends AbstractRenderer
         return $formattedAttributes;
     }
 
-    protected function renderInnerText()
+    protected function renderInnerText(?IRenderingContext $context = null)
     {
         return ($this->htmlComponent->getInnerText() ? $this->indent($this->indentation + 1,  $this->htmlComponent->getInnerText()) . "\n" : '') .
-            $this->renderComponentChildren();
+            $this->renderComponentChildren($context);
     }
 
 
     //
     // LEVEL 3
     //
-    protected function renderComponentChildren()
+    protected function renderComponentChildren(?IRenderingContext $context = null)
     {
         $childrenHtml = '';
         if ($this->htmlComponent instanceof AbstractContainerTag) {
-            foreach ($this->htmlComponent->getChildren() as $child) {
-                if($child instanceof IRenderableElement) {
-                    $childRenderer = $this->createChildRenderer($child);
-                    if($childRenderer) {
-                        $childrenHtml .= $childRenderer->render() . "\n";
-                    }
-                }
-            }
+            $childrenHtml .= RenderingHelper::renderElements($this->htmlComponent->getChildren(), $this->rendererMapper, $this->indentation+1, $context);
         }
         return $childrenHtml;
-    }
-
-
-    //
-    // LEVEL 4
-    //
-    protected function createChildRenderer(IRenderableElement $child): IRenderer
-    {
-        $rendererClass = $this->rendererMapper->mapRenderableElement($child);
-        if($rendererClass) {
-            return new $rendererClass($this->rendererMapper, $child, $this->indentation + 1);
-        }
-        throw new \Exception('No registered renderer for type "'.get_class($child).'"');
     }
 
 }

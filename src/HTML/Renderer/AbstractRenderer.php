@@ -2,10 +2,7 @@
 
 namespace WabLab\HtmlBuilder\HTML\Renderer;
 
-use WabLab\HtmlBuilder\Contract\IRenderableElement;
 use WabLab\HtmlBuilder\Contract\IRenderer;
-use WabLab\HtmlBuilder\Contract\IRenderingContext;
-use WabLab\HtmlBuilder\HTML\Tag\AbstractContainerTag;
 
 abstract class AbstractRenderer implements IRenderer
 {

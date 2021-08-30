@@ -2,9 +2,7 @@
 
 namespace WabLab\HtmlBuilder\HTML\Renderer;
 
-
 use WabLab\HtmlBuilder\Contract\IRenderingContext;
-use WabLab\HtmlBuilder\HTML\Comment;
 use WabLab\HtmlBuilder\HTML\FreeText;
 
 class FreeTextRenderer extends AbstractRenderer

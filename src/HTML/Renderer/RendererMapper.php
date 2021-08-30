@@ -2,24 +2,12 @@
 
 namespace WabLab\HtmlBuilder\HTML\Renderer;
 
-use WabLab\HtmlBuilder\Contract\IHtmlDocType;
 use WabLab\HtmlBuilder\Contract\IRenderableElement;
-use WabLab\HtmlBuilder\HTML\Comment;
-use WabLab\HtmlBuilder\HTML\FreeText;
-use WabLab\HtmlBuilder\HTML\Tag\AbstractTag;
 
 class RendererMapper
 {
     protected $map = [];
-
-    public function __construct()
-    {
-        // initial map
-        $this->register(AbstractTag::class, HtmlTagRenderer::class);
-        $this->register(Comment::class, CommentRenderer::class);
-        $this->register(IHtmlDocType::class, HtmlDocTypeRenderer::class);
-        $this->register(FreeText::class, FreeTextRenderer::class);
-    }
+    protected static $globalMap = [];
 
     public function register(string $type, $rendererClass) {
         $this->map[$type] = $rendererClass;
@@ -29,15 +17,39 @@ class RendererMapper
         unset($this->map[$type]);
     }
 
+    public static function registerGlobal(string $type, $rendererClass) {
+        static::$globalMap[$type] = $rendererClass;
+    }
+
+    public static function unRegisterGlobal(string $type) {
+        unset(static::$globalMap[$type]);
+    }
+
     public function mapRenderableElement(IRenderableElement $element) {
-	    if(isset($this->map[get_class($element)])) {
-            return $this->map[get_class($element)];
+        $className = get_class($element);
+	    if(isset($this->map[$className])) {
+            return $this->map[$className];
         }
+	    if(isset(static::$globalMap[$className])) {
+	        return static::$globalMap[$className];
+        }
+
         foreach($this->map as $type => $rendererClass) {
             if(is_subclass_of($element, $type)) {
                 return $rendererClass;
             }
         }
+
+        foreach(static::$globalMap as $type => $rendererClass) {
+            if(is_subclass_of($element, $type)) {
+                return $rendererClass;
+            }
+        }
+
+        if(class_exists($className.'Renderer')) {
+            return $className.'Renderer';
+        }
+
         return null;
     }
 }

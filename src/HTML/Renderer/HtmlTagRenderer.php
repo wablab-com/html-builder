@@ -2,9 +2,6 @@
 
 namespace WabLab\HtmlBuilder\HTML\Renderer;
 
-use PHPUnit\Util\Exception;
-use WabLab\HtmlBuilder\Contract\IRenderableElement;
-use WabLab\HtmlBuilder\Contract\IRenderer;
 use WabLab\HtmlBuilder\Contract\IRenderingContext;
 use WabLab\HtmlBuilder\Helper\RenderingHelper;
 use WabLab\HtmlBuilder\HTML\Tag\AbstractTag;

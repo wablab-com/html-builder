@@ -15,7 +15,10 @@
             "WabLab\\HtmlBuilder\\": "src/",
             "WabLab\\Bin\\": "bin/",
             "WabLab\\Tests\\": "tests/"
-        }
+        },
+        "files": [
+            "./init.php"
+        ]
     },
 
     "description": "",
